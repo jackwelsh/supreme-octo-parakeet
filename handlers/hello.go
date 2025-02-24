@@ -15,10 +15,6 @@ func NewHello(l *log.Logger) *Hello {
 	return &Hello{l}
 }
 
-func NewGoodbye(l *log.Logger) *Hello {
-	return &Hello{l}
-}
-
 func (h *Hello) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 	h.l.Println("Hello World")
 	d, err := io.ReadAll(r.Body)
